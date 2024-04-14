@@ -1,5 +1,5 @@
-![GitHub watchers](https://img.shields.io/github/watchers/Micha-8/Gpt_bot?style=flat)
-![GitHub last commit](https://img.shields.io/github/last-commit/Micha-8/Gpt_bot)
+![GitHub watchers](https://img.shields.io/github/watchers/Micha-8/tts_tgbot?style=flat)
+![GitHub last commit](https://img.shields.io/github/last-commit/Micha-8/tts_tgbot)
 # Бот-озвучкер
  Телеграмм-бот сценарист на базе Yandex SpeechKit
 
