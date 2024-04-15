@@ -2,6 +2,12 @@ import os
 
 from dotenv import load_dotenv
 
+load_dotenv()
+
+METADATA_URL = "http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token"
+
+HEADERS_FOR_TOKEN = {"Metadata-Flavor": "Google"}
+
 URL = "https://tts.api.cloud.yandex.net/speech/v1/tts:synthesize"
 
 LOGS_PATH = "logs/logs.txt"
@@ -25,8 +31,6 @@ MAX_SYMBOLS_PER_USER = 1000
 WARNING_SYMBOLS_PER_USER = 800
 
 MAX_USERS = 3
-
-load_dotenv()
 
 FOLDER_ID = os.getenv("folder_id")
 

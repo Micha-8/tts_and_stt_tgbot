@@ -11,8 +11,8 @@ def create_db():
 
 def execute_query(query: str, data: tuple | None = None, db_name: str = DB_NAME):
     try:
-        connection = sqlite3.connect(db_name)
-        cursor = connection.cursor()
+        with sqlite3.connect(db_name) as connection:
+            cursor = connection.cursor()
 
         if data:
             cursor.execute(query, data)
@@ -22,7 +22,7 @@ def execute_query(query: str, data: tuple | None = None, db_name: str = DB_NAME)
             cursor.execute(query)
 
     except sqlite3.Error as e:
-        print("Ошибка при выполнении запроса: ", e)
+        logging.error(f"Ошибка при выполнении запроса: {e}")
 
     else:
         result = cursor.fetchall()

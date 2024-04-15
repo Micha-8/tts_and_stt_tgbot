@@ -5,13 +5,13 @@ import logging
 import time
 import http
 
-from config import FOLDER_ID, TOKEN_PATH, LANG, VOICE, EMOTION, SPEED, URL
+from config import FOLDER_ID, TOKEN_PATH, LANG, VOICE, EMOTION, SPEED, URL, METADATA_URL, HEADERS_FOR_TOKEN
 
 
 def create_new_token():
 
-    metadata_url = "http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token"
-    headers = {"Metadata-Flavor": "Google"}
+    metadata_url = METADATA_URL
+    headers = HEADERS_FOR_TOKEN
 
     token_dir = os.path.dirname(TOKEN_PATH)
     if not os.path.exists(token_dir):
@@ -43,15 +43,10 @@ def check_token():
     return IAM_TOKEN
 
 
-def count_symbols(text):
-    return len(text)
-
-
 def text_to_speech(message):
     token = check_token()
     headers = {
-        'Authorization': f'Bearer {token}'
-    }
+        'Authorization': f'Bearer {token}'}
     data = {
         'text': message,
         'lang': LANG,
