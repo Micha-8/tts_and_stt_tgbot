@@ -28,10 +28,12 @@ def start(message: Message):
 
     bot.send_message(
         message.from_user.id,
-        f"Привет, {message.from_user.first_name}! Я бот-озвучкер напиши мне любой текст (до 100 символов) и я его озвучу, "
+        f"<b>Привет, {message.from_user.first_name}!</b>\n"
+        f"Я бот-озвучкер напиши мне любой текст (до 100 символов) и я его озвучу, "
         f" также помни что всего ты можешь озвучить 100 символов.\n"
         f"Для этого напиши команду /tts",
         reply_markup=create_keyboard(["/tts"]),
+        parse_mode='HTML'
     )
 
 
@@ -57,10 +59,11 @@ def start_tts(message: Message):
 
     bot.send_message(
         message.from_user.id,
-        f"Привет, {message.from_user.first_name}!\n"
+        f"<b>Привет, {message.from_user.first_name}!</b>\n"
         f"Я вижу ты готов озвучить свой текст\n",
-        bot.register_next_step_handler(message, tts_func)
+        parse_mode='HTML'
     )
+    bot.register_next_step_handler(message, tts_func)
 
 
 def tts_func(message: Message):
