@@ -36,7 +36,8 @@ def create_table():
         f"(id INTEGER PRIMARY KEY, "
         f"user_id INTEGER, "
         f"message TEXT, "
-        f"tts_symbols INTEGER);"
+        f"tts_symbols INTEGER, "
+        f"stt_blocks INTEGER);"
 
     )
 
@@ -47,8 +48,8 @@ def add_new_user(user_id: int):
     if not is_user_in_db(user_id):
         sql_query = (
             f"INSERT INTO {DB_TABLE_USERS_NAME} "
-            f"(user_id, tts_symbols) "
-            f"VALUES (?, 0);"
+            f"(user_id, tts_symbols, stt_blocks) "
+            f"VALUES (?, 0, 0);"
         )
 
         execute_query(sql_query, (user_id,))
@@ -87,11 +88,12 @@ def get_user_data(user_id: int):
         result = {
             "message": row[2],
             "tts_symbols": row[3],
+            "stt_blocks": row[4],
         }
         return result
 
 
-def get_all_users_data() -> list[tuple[int, int, str, int]]:
+def get_all_users_data() -> list[tuple[int, int, str, int, int]]:
     sql_query = (
         f"SELECT * "
         f"FROM {DB_TABLE_USERS_NAME};"
