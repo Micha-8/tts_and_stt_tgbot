@@ -1,7 +1,7 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/Micha-8/tts_tgbot?style=flat)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Micha-8/tts_tgbot)
-# Бот-озвучкер
- Телеграмм-бот сценарист на базе Yandex SpeechKit
+# Бот-помощник
+ Телеграмм-бот для  озвучки и распознавания текста на базе Yandex SpeechKit
 
 
 ## Описание
@@ -18,7 +18,7 @@
 - Начало работы с gpt:
   - Найди бота в Telegram: @Ygpt_By_Micha_bot.
   - Запусти бота командой /start.
-  - Придумай новый сценарий через команду /new_scene
+  - Выбери режим работы через команды
 
 
 ## Используемая нейросеть

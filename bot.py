@@ -34,7 +34,7 @@ def start(message: Message):
         f"Я бот, который может озвучить или разобрать из аудио текст\n"
         f"Также помни, что есть ограничения для ознакомления используй команду /limits\n"
         f"Для озвучки текста используй команду /tts, а для перевода из аудио в текст /stt",
-        reply_markup=create_keyboard(["/tts", "/stt"]),
+        reply_markup=create_keyboard(["/tts", "/stt", "/limits"]),
         parse_mode='HTML'
     )
 
