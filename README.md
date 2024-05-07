@@ -1,5 +1,5 @@
-![GitHub watchers](https://img.shields.io/github/watchers/Micha-8/tts_tgbot?style=flat)
-![GitHub last commit](https://img.shields.io/github/last-commit/Micha-8/tts_tgbot)
+![GitHub watchers](https://img.shields.io/github/watchers/Micha-8/tts_and_stt_tgbot?style=flat)
+![GitHub last commit](https://img.shields.io/github/last-commit/Micha-8/tts_and_stt_tgbot)
 # Бот-помощник
  Телеграмм-бот для  озвучки и распознавания текста на базе Yandex SpeechKit
 
